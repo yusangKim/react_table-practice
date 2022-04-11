@@ -10,11 +10,11 @@ export default function Home() {
       </Head>
       {/* Body */}
       <div className="text-center">Example List</div>
-      <div className="flex justify-between border-2 mt-10 p-10">
-        <div className="w-2/4 ">
-          <ul className="flex flex-col gap-10">
+      <div className="flex justify-between border-2 mt-10 p-10 ">
+        <div className="w-2/4">
+          <ul className="flex flex-col gap-10 cursor-pointer">
             <li onClick={() => router.push('/example/basic')}>Basic</li>
-            <li>Footers</li>
+            <li onClick={() => router.push('/example/footer')}>Footers</li>
             <li>Sorting</li>
             <li>Filtering</li>
             <li>Grouping</li>
@@ -24,7 +24,7 @@ export default function Home() {
           </ul>
         </div>
         <div className="w-2/4 ">
-          <ul className="flex flex-col gap-10">
+          <ul className="flex flex-col gap-10 cursor-pointer">
             <li>Row Selection With Pagination</li>
             <li>Expanding</li>
             <li>Sub Components</li>
