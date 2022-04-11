@@ -126,6 +126,7 @@ const Basic = () => {
   );
 
   const data = React.useMemo(() => makeData(20), []);
+  console.log(data);
 
   return (
     <Styles>
