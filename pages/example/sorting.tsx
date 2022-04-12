@@ -47,7 +47,7 @@ function Table({ columns, data }) {
 
   return (
     <>
-      <table {...getTableBodyProps()}>
+      <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup, idx) => (
             <tr key={idx} {...headerGroup.getHeaderGroupProps()}>
