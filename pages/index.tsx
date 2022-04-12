@@ -15,7 +15,7 @@ export default function Home() {
           <ul className="flex flex-col gap-10 cursor-pointer">
             <li onClick={() => router.push('/example/basic')}>Basic</li>
             <li onClick={() => router.push('/example/footer')}>Footers</li>
-            <li>Sorting</li>
+            <li onClick={() => router.push('/example/sorting')}>Sorting</li>
             <li>Filtering</li>
             <li>Grouping</li>
             <li>Grouping Column</li>

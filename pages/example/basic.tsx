@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import { useTable } from 'react-table';
 import makeData from '../../utils/makedata';
