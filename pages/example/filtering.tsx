@@ -3,12 +3,6 @@ import { useTable, useGlobalFilter, Column, Row, IdType } from 'react-table';
 import styled from 'styled-components';
 import { matchSorter } from 'match-sorter';
 import makeData from '../../utils/makedata';
-/**
- * There's some boilter plate here
- * Important part is our globalFilter function
- * where we specify which columns to
- * filter
- * */
 
 const Styles = styled.div`
   padding: 1rem;
@@ -51,21 +45,12 @@ interface TableProps<T extends object> {
   filter: string; // Filter text
 }
 
-/**
- * We have an Input in App.tsx which
- * passes the filter text
- */
-
 function Table<T extends { id: string }>({
   columns,
   data,
   filters,
   filter,
 }: TableProps<T>): React.ReactElement {
-  /**
-   * Custom Filter Fucntion ----
-   * Only filter by: code * name
-   */
   const ourGlobalFilterFunction = useCallback(
     (rows: Row<T>[], ids: IdType<T>[], query: string) => {
       return matchSorter(rows, query, {
@@ -86,14 +71,13 @@ function Table<T extends { id: string }>({
     {
       columns,
       data,
-      // Use our custom function
       globalFilter: ourGlobalFilterFunction,
     },
     useGlobalFilter
   );
 
   useEffect(() => {
-    setGlobalFilter(filter); // Set the Global Filter to the filter prop.
+    setGlobalFilter(filter);
   }, [filter, setGlobalFilter]);
 
   return (
@@ -105,7 +89,6 @@ function Table<T extends { id: string }>({
               {headerGroup.headers.map((column, i) => (
                 <th {...column.getHeaderProps()} key={i}>
                   {column.render('Header')}
-                  {/* Render the columns filter UI */}
                 </th>
               ))}
             </tr>
@@ -145,7 +128,6 @@ export default function Filtering() {
           {
             Header: 'Last Name',
             accessor: 'lastName',
-            // Use our custom `fuzzyText` filter on this column
           },
         ],
       },
