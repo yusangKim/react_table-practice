@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import styled from 'styled-components';
 import { useTable } from 'react-table';
 
-import makeData from '../../utils/makedata';
+import makeData from '../../utils/makedata'; //랜덤으로 데이터 만들어줌
 import { group } from 'console';
 import { idText } from 'typescript';
 
