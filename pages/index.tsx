@@ -16,7 +16,7 @@ export default function Home() {
             <li onClick={() => router.push('/example/basic')}>Basic</li>
             <li onClick={() => router.push('/example/footer')}>Footers</li>
             <li onClick={() => router.push('/example/sorting')}>Sorting</li>
-            <li>Filtering</li>
+            <li onClick={() => router.push('/example/filtering')}>Filtering</li>
             <li>Grouping</li>
             <li>Grouping Column</li>
             <li>Pagination</li>
