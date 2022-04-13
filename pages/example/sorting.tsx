@@ -4,6 +4,8 @@ import { useTable, useSortBy } from 'react-table';
 
 import makeData from '../../utils/makedata';
 
+//table의 data를 정렬하는 기능
+
 const Styles = styled.div`
   padding: 1rem;
 

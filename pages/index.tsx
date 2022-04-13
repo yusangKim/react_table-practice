@@ -24,7 +24,9 @@ export default function Home() {
             <li onClick={() => router.push('/example/pagination')}>
               Pagination
             </li>
-            <li>Row Selection</li>
+            <li onClick={() => router.push('/example/rowSelection')}>
+              Row Selection
+            </li>
           </ul>
         </div>
         <div className="w-2/4 ">

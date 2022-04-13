@@ -7,6 +7,8 @@ import makeData from '../../utils/makedata'; //랜덤으로 데이터 만들어�
 import { group } from 'console';
 import { idText } from 'typescript';
 
+//table 밑에 footer를 추가
+
 const Styles = styled.div`
   padding: 1rem;
   table {
