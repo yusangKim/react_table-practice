@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { matchSorter } from 'match-sorter';
 import makeData from '../../utils/makedata';
 
+//검색기능처럼 data를 filtering하는 기능
+
 const Styles = styled.div`
   padding: 1rem;
 

@@ -4,6 +4,8 @@ import { useTable } from 'react-table';
 import makeData from '../../utils/makedata';
 import styled from 'styled-components';
 
+//react table 기본 사용 방법
+
 const Styles = styled.div`
   padding: 1rem;
 

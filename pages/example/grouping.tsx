@@ -4,6 +4,8 @@ import { useTable, useGroupBy, useExpanded } from 'react-table';
 
 import makeData from '../../utils/makedata';
 
+//data를 그룹화 시키는 기능
+
 const Styles = styled.div`
   padding: 1rem;
   table {
