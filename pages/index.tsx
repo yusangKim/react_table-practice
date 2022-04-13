@@ -18,7 +18,9 @@ export default function Home() {
             <li onClick={() => router.push('/example/sorting')}>Sorting</li>
             <li onClick={() => router.push('/example/filtering')}>Filtering</li>
             <li onClick={() => router.push('/example/grouping')}>Grouping</li>
-            <li>Grouping Column</li>
+            <li onClick={() => router.push('/example/columnGrouping')}>
+              Grouping Column
+            </li>
             <li>Pagination</li>
             <li>Row Selection</li>
           </ul>
