@@ -153,7 +153,7 @@ function Table({ columns, data }) {
 }
 
 function Pagination() {
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: 'Name',
@@ -192,7 +192,7 @@ function Pagination() {
     ],
     []
   );
-  const data = React.useMemo(() => makeData(100000), []);
+  const data = useMemo(() => makeData(100000), []);
 
   return (
     <Styles>
