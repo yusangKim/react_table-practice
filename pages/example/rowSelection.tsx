@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { useTable, useRowSelect } from 'react-table';
 
@@ -127,7 +127,7 @@ function Table({ columns, data }) {
 }
 
 function RowSelection() {
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: 'Name',
@@ -167,7 +167,7 @@ function RowSelection() {
     []
   );
 
-  const data = React.useMemo(() => makeData(10, 3), []);
+  const data = useMemo(() => makeData(10, 3), []);
 
   return (
     <Styles>
