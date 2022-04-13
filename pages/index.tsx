@@ -31,7 +31,11 @@ export default function Home() {
         </div>
         <div className="w-2/4 ">
           <ul className="flex flex-col gap-10 cursor-pointer">
-            <li>Row Selection With Pagination</li>
+            <li
+              onClick={() => router.push('/example/rowSelectionWithPagination')}
+            >
+              Row Selection With Pagination
+            </li>
             <li>Expanding</li>
             <li>Sub Components</li>
             <li>Sub Components(lazy)</li>
