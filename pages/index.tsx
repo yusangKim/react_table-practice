@@ -36,7 +36,7 @@ export default function Home() {
             >
               Row Selection With Pagination
             </li>
-            <li>Expanding</li>
+            <li onClick={() => router.push('/example/expanding')}>Expanding</li>
             <li>Sub Components</li>
             <li>Sub Components(lazy)</li>
             <li>Editable Data</li>
