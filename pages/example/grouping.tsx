@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useTable, useGroupBy, useExpanded } from 'react-table';
 
 import makeData from '../../utils/makedata';
-import { spawn } from 'child_process';
 
 const Styles = styled.div`
   padding: 1rem;
@@ -92,7 +91,6 @@ function Table({ columns, data }) {
               {headerGroup.headers.map((column, i) => (
                 <th key={i} {...column.getHeaderProps()}>
                   {column.canGroupBy ? (
-                    // If the column can be grouped, let's add a toggle
                     <span {...column.getGroupByToggleProps()}>
                       {column.isGrouped ? '🛑 ' : '👊 '}
                     </span>
@@ -124,7 +122,6 @@ function Table({ columns, data }) {
                       }}
                     >
                       {cell.isGrouped ? (
-                        // If it's a grouped cell, add an expander and row count
                         <>
                           <span {...row.getToggleRowExpandedProps()}>
                             {row.isExpanded ? '👇' : '👉'}
@@ -132,11 +129,8 @@ function Table({ columns, data }) {
                           {cell.render('Cell')} ({row.subRows.length})
                         </>
                       ) : cell.isAggregated ? (
-                        // If the cell is aggregated, use the Aggregated
-                        // renderer for cell
                         cell.render('Aggregated')
-                      ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
-                        // Otherwise, just render the regular cell
+                      ) : cell.isPlaceholder ? null : (
                         cell.render('Cell')
                       )}
                     </td>
@@ -172,20 +166,12 @@ function Grouping() {
           {
             Header: 'First Name',
             accessor: 'firstName',
-            // Use a two-stage aggregator here to first
-            // count the total rows being aggregated,
-            // then sum any of those counts if they are
-            // aggregated further
             aggregate: 'count',
             Aggregated: ({ value }) => `${value} Names`,
           },
           {
             Header: 'Last Name',
             accessor: 'lastName',
-            // Use another two-stage aggregator here to
-            // first count the UNIQUE values from the rows
-            // being aggregated, then sum those counts if
-            // they are aggregated further
             aggregate: 'uniqueCount',
             Aggregated: ({ value }) => `${value} Unique Names`,
           },
@@ -197,14 +183,12 @@ function Grouping() {
           {
             Header: 'Age',
             accessor: 'age',
-            // Aggregate the average age of visitors
             aggregate: 'average',
             Aggregated: ({ value }) => `${Math.round(value * 100) / 100} (avg)`,
           },
           {
             Header: 'Visits',
             accessor: 'visits',
-            // Aggregate the sum of all visits
             aggregate: 'sum',
             Aggregated: ({ value }) => `${value} (total)`,
           },
@@ -215,7 +199,6 @@ function Grouping() {
           {
             Header: 'Profile Progress',
             accessor: 'progress',
-            // Use our custom roundedMedian aggregator
             aggregate: roundedMedian,
             Aggregated: ({ value }) => `${value} (med)`,
           },
